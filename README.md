@@ -19,3 +19,12 @@ class TwoLayerNet (__init__, predict(sigmoid, softmax), loss(cross_entropy_error
 2023/2/13  
 活性化関数の意義:  非線形な変換器を利用することで複雑な非線形表現を学習できる。  
 逆に活性化関数がなければ、線形表現しか学習できずDNN自体が線形な写像になってしまう。  
+よく考えたら、sigmoid や tanh が有効に作用してくれる引数の範囲は −2〜2　ぐらい  
+入力ベクトルをこの範囲に正規化する理由は活性化関数の表現力を高めるため？  
+じゃあほぼ線形なReLUはなんで採用されてんの? ->　正の範囲で微分値が全て１だからDNNの学習の収束時間が早くなる  
+逆に、sigmoidやtanhは「勾配が0に飽和して学習が進行しなくなる」ことがあるらしい。  
+https://cvml-expertguide.net/terms/dl/layers/activation-function/  
+
+時間がないので写径をやめる。
+方針
+-> ゼロつく5章、6章、７章　-> pytorch 1章、2章 -> kaggle
